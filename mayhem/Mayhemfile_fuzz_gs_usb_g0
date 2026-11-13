@@ -1,0 +1,11 @@
+project: savantenvs/candleLight_fw
+target: fuzz_gs_usb_g0
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_gs_usb_g0/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_gs_usb_g0
+    libfuzzer: true
+    timeout: 30
+    env:
+      MFUZZ_COMPAT_LEVEL: '2'
